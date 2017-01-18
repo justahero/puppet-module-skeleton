@@ -1,1 +1,1 @@
-include testmodule
+include test_module

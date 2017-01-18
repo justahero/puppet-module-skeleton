@@ -1,10 +1,10 @@
 require 'spec_helper_acceptance'
 
-describe 'testmodule class' do
+describe 'test_module class' do
   context 'with defaults' do
     it 'runs idempotently' do
       pp = <<-EOS
-      class { '::testmodule': }
+      class { 'test_module': }
       EOS
 
       apply_manifest(pp, catch_failures: true)
