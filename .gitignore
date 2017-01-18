@@ -4,6 +4,7 @@
 .vagrant/
 
 coverage/
+junit/
 log/
 pkg/
 spec/fixtures/manifests/
