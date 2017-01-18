@@ -1,3 +1,5 @@
+# This file is not generated but manually crafted
+---
 sudo: false
 language: ruby
 cache: bundler
@@ -9,16 +11,16 @@ matrix:
   fast_finish: true
   include:
   - rvm: 2.3.1
+    dist: trusty
+    env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_set=docker/ubuntu-16.04-x64
+    script: bundle exec rake beaker
+    services: docker
+    sudo: required
+  - rvm: 2.3.1
     env: PUPPET_GEM_VERSION='~> 4.0'
   - rvm: 2.2
     env: PUPPET_GEM_VERSION='~> 4.0'
   - rvm: 2.1
     env: PUPPET_GEM_VERSION='~> 4.0'
-  # - rvm: 2.3.1
-  #   env: PUPPET_GEM_VERSION='~> 3.7.5'
-  # - rvm: 2.2
-  #   env: PUPPET_GEM_VERSION='~> 3.7.5'
-  # - rvm: 2.1
-  #   env: PUPPET_GEM_VERSION='~> 3.7.5'
 notifications:
   email: false
