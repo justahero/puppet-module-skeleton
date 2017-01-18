@@ -3,6 +3,11 @@ require 'rspec-puppet-utils'
 require 'rspec-puppet-facts'
 include RspecPuppetFacts
 
+require 'webmock'
+require 'webmock/rspec'
+
+WebMock.disable_net_connect!(:allow_localhost => true)
+
 def fixture_path
   File.expand_path(File.join(__FILE__, '..', 'fixtures'))
 end
