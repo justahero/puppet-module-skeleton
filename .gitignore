@@ -1,0 +1,13 @@
+# folders
+.bundle/
+.librarian/
+.vagrant/
+
+coverage/
+log/
+pkg/
+spec/fixtures/manifests/
+spec/fixtures/modules
+vendor/
+
+# files

@@ -1,0 +1,35 @@
+{
+  "name": "test_module",
+  "version": "0.1.0",
+  "author": "Sebastian Ziebell",
+  "summary": "A skeleton puppet project with test environment",
+  "license": "MIT",
+  "source": "https://github.com/justahero/puppet-module-skeleton",
+  "project_page": "https://github.com/justahero/puppet-module-skeleton",
+  "issues_url": "https://github.com/justahero/puppet-module-skeleton/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 3.2.0 < 5.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "16.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">= 3.3.2"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.7.5 < 4.8.0"
+    }
+  ],
+  "data_provider": null
+}
