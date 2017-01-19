@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'puppet', ENV['PUPPET_GEM_VERSION'] || '~> 4.0'
+gem 'facter'
 
 group :test do
   gem 'puppetlabs_spec_helper'
   gem 'puppet-lint'
   gem 'puppet-syntax'
 
-  gem 'facter'
   gem 'metadata-json-lint'
 
   gem 'rspec', '~> 3.5.0'

@@ -4,7 +4,7 @@ describe 'test_module class' do
   context 'with defaults' do
     it 'runs idempotently' do
       pp = <<-EOS
-      class { 'test_module': }
+      class { '::test_module': }
       EOS
 
       apply_manifest(pp, catch_failures: true)
