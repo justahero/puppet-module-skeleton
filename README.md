@@ -28,7 +28,7 @@ $ rake spec_standalone
 
 ## Acceptance tests
 
-The project also supports acceptance tests with [beaker](https://github.com/puppetlabs/beaker). It offers support to test the Puppet code between multiple (virtual) machines. A list of nodes can be configured in the folder `spec/acceptance/nodesets`, while test files are located under `spec/acceptance`. Similar to rspec-puppet, the server infrastructure can be tested with [serverspec](http://serverspec.org/).
+The project also supports acceptance tests with [beaker](https://github.com/puppetlabs/beaker). It offers support to test the Puppet code between multiple (virtual) machines. A list of nodes can be configured in the folder `spec/acceptance/nodesets`, while test files are located under `spec/acceptance`. Similar to rspec-puppet, the server infrastructure can be tested with [beaker-rspec](https://github.com/puppetlabs/beaker-rspec) and [serverspec](http://serverspec.org/).
 
 To run all acceptance tests on the set of nodes:
 
@@ -53,3 +53,19 @@ sets the node to `default`. The given example node configured in `spec/acceptanc
 ```
 $ rake beaker:ssh:default
 ```
+
+The current setup of acceptance tests uses the [beaker-puppet_install_helper](https://github.com/puppetlabs/beaker-puppet_install_helper) gem, which simplifies the installation of Puppet into the test VM, while providing environment variables to set a specific Puppet version and type (foss or agent) to install.
+
+To use an older Puppet version inside the VM run the acceptance tests as follows:
+
+```
+$ PUPPET_INSTALL_TYPE=foss PUPPET_INSTALL_VERSION=3.7.5 BEAKER_destroy=no rake acceptance
+```
+
+This will install version `3.7.5` of Puppet with the appropriate type. In more recent Puppet versions, the Puppet agent needs to be used. In doing so the version that is given via `PUPPET_INSTALL_VERSION` is different, see the [official version matrix](https://docs.puppet.com/puppet/latest/about_agent.html) for more details on how to use specific versions. For example to install Puppet `4.4.0` with the puppet-agent use:
+
+```
+$ PUPPET_INSTALL_TYPE=agent PUPPET_INSTALL_VERSION=1.4.0 rake acceptance
+```
+
+This makes it easier to execute test runs with different Puppet versions in an CI environment, e.g.TravisCI.
