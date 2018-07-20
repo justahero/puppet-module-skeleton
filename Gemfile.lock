@@ -362,7 +362,7 @@ DEPENDENCIES
   json (~> 1.8.6)
   metadata-json-lint
   pry-byebug
-  puppet (~> 4.10.0)
+  puppet (~> 4.10)
   puppet-lint
   puppet-syntax
   puppetlabs_spec_helper (~> 2.9.1)
@@ -376,4 +376,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.16.0
+   1.16.3

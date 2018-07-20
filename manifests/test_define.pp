@@ -1,6 +1,4 @@
 #
-define test_define(
-
+define test_module::test (
 ) {
-
 }
