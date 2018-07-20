@@ -5,7 +5,6 @@ require 'puppet-syntax/tasks/puppet-syntax'
 
 exclude_paths = [
   'bundle/**/*',
-  'future_parser/**/*',
   'spec/**/*',
   'pkg/**/*',
   'vendor/**/*',
