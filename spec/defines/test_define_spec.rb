@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe 'test_define', type: :define do
   let(:title) { "test" }
+  let(:node) { "default" }
 
   on_supported_os.each do |os, facts|
     describe "on #{os}" do

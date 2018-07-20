@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    CFPropertyList (2.2.8)
+    CFPropertyList (2.3.6)
     addressable (2.4.0)
     aws-sdk-v1 (1.66.0)
       json (~> 1.4)
@@ -55,18 +55,18 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     deep_merge (1.1.1)
-    diff-lcs (1.2.5)
+    diff-lcs (1.3)
     docker-api (1.33.1)
       excon (>= 0.38.0)
       json
     excon (0.54.0)
-    facter (2.4.6)
-      CFPropertyList (~> 2.2.6)
-    facterdb (0.3.8)
+    facter (2.5.1)
+    facterdb (0.5.2)
       facter
       jgrep
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
+    fast_gettext (1.1.2)
     ffi (1.9.14)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -166,6 +166,13 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    gettext (3.2.9)
+      locale (>= 2.0.5)
+      text (>= 1.3.0)
+    gettext-setup (0.30)
+      fast_gettext (~> 1.1.0)
+      gettext (>= 3.0.2)
+      locale
     google-api-client (0.9.4)
       addressable (~> 2.3)
       googleauth (~> 0.5)
@@ -197,7 +204,7 @@ GEM
       guard
       rake
     hashdiff (0.3.2)
-    hiera (3.2.2)
+    hiera (3.4.3)
     hocon (1.2.4)
     httpclient (2.8.3)
     hurley (0.2)
@@ -205,8 +212,7 @@ GEM
     inflecto (0.0.2)
     inifile (2.0.2)
     ipaddress (0.8.3)
-    jgrep (1.4.1)
-      json
+    jgrep (1.5.0)
     json (1.8.6)
     json_pure (1.8.6)
     jwt (1.5.6)
@@ -214,11 +220,12 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     little-plugger (1.1.4)
+    locale (2.1.2)
     logging (2.1.0)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
     lumberjack (1.0.10)
-    mcollective-client (2.9.1)
+    mcollective-client (2.12.1)
       json
       stomp
       systemu
@@ -231,7 +238,7 @@ GEM
     mime-types (2.99.3)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
-    mocha (1.2.1)
+    mocha (1.5.0)
       metaclass (~> 0.0.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
@@ -255,15 +262,16 @@ GEM
       byebug (~> 9.0)
       pry (~> 0.10)
     public_suffix (1.4.6)
-    puppet (4.8.1)
-      CFPropertyList (~> 2.2.6)
+    puppet (4.10.12)
       facter (> 2.0, < 4)
+      gettext-setup (>= 0.10, < 1)
       hiera (>= 2.0, < 4)
       json_pure (~> 1.8)
+      locale (~> 2.1)
     puppet-lint (2.1.0)
     puppet-syntax (2.2.0)
       rake
-    puppetlabs_spec_helper (1.2.2)
+    puppetlabs_spec_helper (2.9.1)
       mocha (~> 1.0)
       puppet-lint (~> 2.0)
       puppet-syntax (~> 2.0)
@@ -280,31 +288,31 @@ GEM
       uber (~> 0.0.7)
     require_all (1.3.3)
     retriable (2.1.0)
-    rspec (3.5.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
-    rspec-core (3.5.4)
-      rspec-support (~> 3.5.0)
-    rspec-expectations (3.5.0)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+    rspec-core (3.7.1)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
+      rspec-support (~> 3.7.0)
     rspec-its (1.2.0)
       rspec-core (>= 3.0.0)
       rspec-expectations (>= 3.0.0)
-    rspec-mocks (3.5.0)
+    rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-puppet (2.5.0)
+      rspec-support (~> 3.7.0)
+    rspec-puppet (2.6.14)
       rspec
-    rspec-puppet-facts (1.7.1)
+    rspec-puppet-facts (1.8.0)
       facter
       facterdb (>= 0.3.0)
       json
       mcollective-client
       puppet
     rspec-puppet-utils (2.2.1)
-    rspec-support (3.5.0)
+    rspec-support (3.7.1)
     rsync (1.0.9)
     safe_yaml (1.0.4)
     serverspec (2.38.0)
@@ -326,9 +334,10 @@ GEM
       net-ssh (>= 2.7, < 5.0)
       net-telnet
       sfl
-    stomp (1.4.3)
+    stomp (1.4.4)
     stringify-hash (0.0.2)
     systemu (2.6.5)
+    text (1.3.1)
     thor (0.19.4)
     trollop (2.1.2)
     uber (0.0.15)
@@ -350,20 +359,21 @@ DEPENDENCIES
   beaker-rspec (~> 5.3.0)
   facter
   guard-rake
+  json (~> 1.8.6)
   metadata-json-lint
   pry-byebug
-  puppet (~> 4.0)
+  puppet (~> 4.10.0)
   puppet-lint
   puppet-syntax
-  puppetlabs_spec_helper
+  puppetlabs_spec_helper (~> 2.9.1)
   rake (~> 12.0)
-  rspec (~> 3.5.0)
-  rspec-puppet
-  rspec-puppet-facts
-  rspec-puppet-utils
+  rspec (~> 3.7.0)
+  rspec-puppet (~> 2.6.14)
+  rspec-puppet-facts (~> 1.8.0)
+  rspec-puppet-utils (~> 2.2.0)
   serverspec
   vagrant-wrapper
   webmock
 
 BUNDLED WITH
-   1.13.5
+   1.16.0

@@ -1,3 +1,6 @@
-define test_define {
-  
+#
+define test_define(
+
+) {
+
 }
