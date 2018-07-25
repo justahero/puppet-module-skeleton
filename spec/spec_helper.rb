@@ -21,6 +21,11 @@ RSpec.configure do |c|
   c.hiera_config = File.join(fixture_path, 'hiera', 'hiera.yaml')
   c.module_path  = File.join(fixture_path, 'modules')
   c.manifest_dir = File.join(fixture_path, 'manifests')
+
+  c.before(:each) do
+    Puppet::Util::Log.level = :debug
+    Puppet::Util::Log.newdestination(:console)
+  end
 end
 
 require 'puppetlabs_spec_helper/module_spec_helper'

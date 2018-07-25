@@ -1,8 +1,9 @@
 ---
+:version: 3
 :backends:
   - yaml
 :yaml:
-  :datadir: spec/fixtures/hiera/hieradata
+  :datadir: spec/fixtures/hiera
 :hierarchy:
   - ! '%{scenario}'
   - common
